@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        app.filter("myFilter", function () {
+            return function (input) {
+               var text = "";
+                for (var i = 0; i < input.length; i++) {
+                    if (i % 2 == 0){
+                        text = text + (input[i].toString()).toUpperCase();
+                    }    
+                    if (i % 2 != 0){
+                        text = text + (input[i].toString()).toLowerCase();
+                    }      
+                }
+                return text;
+            }
+        });
+    </script>
+
+</head>
+
+<body ng-app="myApp" ng-init=" cityname =['mangalore','BANGlore','uDUPI'] ; ">
+    <ul>
+        <li ng-repeat="cname in cityname ">{{cname |myFilter }}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <script>
+        function middle() {
+            var st = f1.t1.value;
+            var rev = ((st.split("")).reverse()).join("");
+
+            if(st==rev){
+                alert("palin");
+            }else
+            {
+                alert("not palindrome");
+            }
+        }
+
+        function vowel(){
+            var str = (f1.t2.value).toLowerCase();
+            var c =0;
+            for(var i =0; i<str.length;i++){
+                if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] =='o' || str[i]== 'u'){
+                    c++;
+                }
+            }
+            alert(c);
+        }
+        function palin(){
+            var num = f1.t3.value;
+            var n =num;
+            var r,rev=0;
+            while(n!=0){
+                r  = n%10;
+                rev = rev*10+ r;
+                n = parseInt(n/10);
+            }
+            alert(rev);
+            if(rev == num){
+                alert("palindrome");
+            }else{
+                alert("not plaindrome ");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f1">
+        Enter text<input type="text" name="t1">
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="middle()"><br>
+        <input type="reset">
+        <br>
+        <b>COUNT VOWELS</b>
+        Enter text<input type="text" name="t2">
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="vowel()"><br>
+        <input type="reset">
+        <br>
+        <b>palindrome</b>
+        Enter text<input type="number" name="t3">
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="palin()"><br>
+        <input type="reset">
+        <br>
+        <b>GENERATE PRIME </b>
+        Enter text<input type="number" name="t4">
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="prime1()"><br>
+        <input type="reset">
+        <br>
+                <b>GENERATE FIBONACCI </b>
+                Enter text<input type="number" name="t5">
+                <p id="res"></p>
+                <br>
+                <input type="button" value="check" onclick="fibo()"><br>
+                <input type="reset">
+        
+    </form>
+</body>
+<script>
+    function prime1(){
+        var num = f1.t4.value;
+        var ans =[];
+        for(var i=0;i<num;i++){
+            var flag =0;
+            for(var j = 2;j<i;j++){
+                if(i%j == 0){
+                    flag = 1;
+                    break;
+                }
+            }
+            if(i>1 && flag == 0){
+                ans.push(i);
+            }
+        }
+        alert(ans);
+    }
+    function fibo() {
+            var num = f1.t5.value;
+            var ans = [];
+            var n1=0;n2=1,n3=0;
+            ans.push(n1);
+            ans.push(n2);
+            for(var i=2;i<num;i++){
+                n3 = n1+ n2;
+                n1 = n2;
+                n2 = n3;
+                ans.push(n3);
+            }
+            alert(ans);
+        }
+</script>
+</html>

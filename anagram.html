@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <script>
+        function stt(s, str) {
+            var f = 0;
+            for (var i = 0; i < str.length; i++) {
+                if (s == str[i]) {
+                    f = 1;
+                }
+            }
+            if (f == 1) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+        function middle() {
+            var st1 = f1.t1.value;
+            var st2 = f1.t2.value;
+            var str1 = ((st1.split("")).sort()).toString();
+            var str2 = ((st2.split("")).sort()).toString();
+
+            if(str1 ==str2){
+                alert("STRINGS ARE ANAGARAM");
+            }else{
+                alert("STRINGS ARE NOT ANAGARAM");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f1">
+        Enter text<input type="text" name="t1">
+        Enter text<input type="text" name="t2">
+
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="middle()"><br>
+        <input type="reset">
+    </form>
+</body>
+
+</html>

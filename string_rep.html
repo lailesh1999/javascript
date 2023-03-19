@@ -1,0 +1,61 @@
+<html>
+<head>
+    <script>
+        
+        function middle() {
+            var st = f1.t1.value;
+            var str = "";
+            var flag =0;
+            for (var i = 0; i < st.length; i++) {
+                for (var j = i + 1; j < st.length; j++) {
+                    if (st[i] == st[j]) {
+                        str = str + st[i];
+                        flag =1
+                        break;
+                    }
+                }
+                if(flag == 1){
+                    break;
+                }
+            }
+            alert(str);
+        }
+
+       
+    </script>
+</head>
+
+<body>
+    <form name="f1">
+        Enter text<input type="text" name="t1">
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check FIRST REPEAT" onclick="middle()"><br>
+        <input type="button" value="CHECK FIRST NON REPEAT" onclick="s()"><br>
+
+        <input type="reset">
+    </form>
+</body>
+
+</html>
+<script>
+     function s() {
+            var st = f1.t1.value;
+            var str = [];
+            str = st.split("");
+            var res = "";
+            for (var i = 0; i < str.length; i++) {
+                var c= 0;
+                for (var j = i+1; j < str.length; j++) {
+                    if (str[i] == str[j]) {
+                        c =c + 1;
+                    }
+                }
+                if (c == 0) {
+                    res = res + str[i];
+                    break;
+                }
+            }
+            alert(res);
+        }
+</script>

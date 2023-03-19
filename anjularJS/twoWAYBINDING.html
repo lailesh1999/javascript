@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script>
+            var myapp = angular.module("myAPP",[]);
+            myapp.controller("myController",function($scope){
+                $scope.Name="lailesh";
+                $scope.Address="Manglore";
+                $scope.Show = function(msg){
+                    alert(msg);
+                }
+            });
+        </script>
+    </head>
+<body ng-app="myAPP">
+    <div ng-controller="myController">
+        <label>NAME</label><input type="text" ng-model="Name">
+        <label>ADDRESS</label><input type="text" ng-model="Address">
+        <br>
+        <b>NAME::</b>{{Name}}<br>
+        <b>ADDRESS::</b>{{Address}}<br>
+        <button ng-click="Show(Name)">SHOW</button>
+    </div>
+
+</body>
+</html>

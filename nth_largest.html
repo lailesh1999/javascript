@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <script>
+        function isrepeat(m,ele){
+            var f =0;
+            for(var h =0; h<m.length;h++){
+                if(m[h] == ele){
+                    f = 1;
+                    break;
+                }
+            }
+            if(f == 1){
+                return 1;
+            }else
+            {
+                return 0;
+            }
+        }
+        function middle() {
+            var st = f1.t1.value;
+            var lm = f1.lm.value;
+            var f  = parseInt(lm);
+            var arr = [];
+            var m = [];
+            arr = st.split(" ");
+        for(var j =0;j<f;j++){            
+            var max = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                    if (arr[i] > max && isrepeat(m,arr[i]) == 0) {
+                        max = arr[i];
+                    }
+            }
+            m.push(max);
+        }
+        for(var u =0;u<m.length;u++){
+            alert(m[u]);
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <form name="f1">
+        Enter text<input type="text" name="t1" required>
+        Enter limit<input type="text" name="lm" required>
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="middle()"><br>
+        <input type="reset">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+</head>
+
+<body ng-app>
+    enter amount:<input type=text ng-model="amount"><br>
+    1111| number:4 = {{1111 | number}}
+    number | number = {{amount | number}}<br>
+    amount | number:4 = {{amount | number:4}}<br>
+    amount | number:6 = {{amount | number:6}}<br>
+    name:{{ amount|lowercase }}<br>
+    currency:{{amount|currency }}<br>
+    <div ng-init="kk = [ 'Sanya' ,'Shree','Sanmith']; students =[
+{fname:'Rashmi',lname:'K',marks:'78',course:'MCA'},
+{fname:'Ananth',lname:'M',marks:'58',course:'MBA'},
+{fname:'Akash',lname:'Bhat',marks:'56',course:'MCA'}
+];
+">
+        Ascending order of marks:
+        <ul>
+            <li ng-repeat="x in students | orderBy:'marks' "> {{x.fname}}
+        </ul><br>
+        Enter the course <input type="text" ng-model="ccourse"><br>
+        <li ng-repeat="x in students | filter:ccourse ">{{ x.course}}</li>
+        <br>
+        filter:
+        <input type="text" ng-model="c">
+        <li ng-repeat="x in students | filter:c ">{{ x.fname }}</li>
+        <br>
+        =====================================
+        <ul>
+            <li ng-repeat=" stobj in students "> {{stobj.fname}}</li>
+        </ul>
+    </div>
+</body>
+
+</html>

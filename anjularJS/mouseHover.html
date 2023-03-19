@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function ($scope) {
+            $scope.count = 0;
+            $scope.myFunction = function () {
+                $scope.count = $scope.count + 1;
+            }
+        });
+    </script>
+
+<body ng-app="myApp" ng-controller="myController">
+    <textarea ng-focus="count=count+1">Aloysius Aimit</textarea>
+    <h1>{{count}} </h1>
+    <h3 ng-mouseover="count=count+1"> mouse over event demo </h3>
+    <h3 ng-mouseenter="count=count+1"> mouse enter event demo </h3>
+    <h3 ng-mousemove="count=count+1"> mouse move event demo </h3>
+    <h3 ng-mouseleave="count=count+1"> mouse leave event demo </h3>
+    <h3 ng-mousedown="count=count+1"> mouse down event demo </h3>
+    <h3 ng-mouseup="count=count+1"> mouse up event demo </h3>
+    <button ng-click="myFunction()"> demo ngclick </button>
+</body>
+
+</html>

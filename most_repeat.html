@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script>
+        function middle() {
+            var st = f1.t1.value;
+            var arr = [];
+            arr = st.split(" ");
+            var max_arr = arr[i];
+            var max_count =0;
+            for (var i = 0; i < arr.length; i++) {
+                var c = 0;
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        c = c+ 1;
+                    }
+                }
+                if(c > max_count){
+                    max_count = c;
+                    max_arr = arr[i];
+                }
+               
+            }
+            alert(max_arr);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f1">
+        Enter text<input type="text" name="t1">
+        <p id="res"></p>
+        <br>
+        <input type="button" value="check" onclick="middle()"><br>
+        <input type="reset">
+    </form>
+</body>
+
+</html>
