@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function isVail(ele,a){
+        var flag =0;
+        for(var g=0;g<a.length;g++){
+            if(ele == a[g]){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 1){
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    var arr = [34,77,567,66,55,67,4000,88,90,33,100,456,1000,3000]
+    var a = [];
+
+for(var k = 0;k<2;k++){
+    var max = arr[0];
+
+    for(var i =1;i<arr.length;i++){
+
+        if(parseInt(arr[i]) > max && isVail(arr[i],a) == 0){
+            max = arr[i];
+        }
+    }
+    a.push(max);
+}   
+        document.write("ARRAY :" + a);
+document.write(" \n SECOND LARGEST NUMBER IS :" + a[1]);
+
+</script>   

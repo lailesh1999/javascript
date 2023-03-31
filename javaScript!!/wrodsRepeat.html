@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+</html>
+<script>
+    var str = "hello how are you lailesh veigas";
+
+        var str1 = str.split(" ");
+        var str2 = " ";
+        var s_rev = " ";
+        var output = " ";
+        for (var i = 0; i < str1.length; i++) {
+            str2 = str1[i];
+            for (var j = str2.length - 1; j >= 0; j--) {
+                s_rev = s_rev + str2[j];
+            }
+            output = output + s_rev + " ";
+            s_rev = " ";
+        }
+        document.write(output);             
+</script>
